@@ -2,17 +2,13 @@
 
 ## <a href="#creating_custom_commands">#</a> Creating custom commands
 			
-Custom commands can be some of the trickiest things to create. They can also be some of the 
-most powerful. In this tutorial I am going to show everything about commands, and how to use 
-them. Let's start by defining what we want the user to type when they execute this command:
+Custom commands can be some of the trickiest things to create. They can also be some of the most powerful. In this tutorial I am going to show everything about commands, and how to use them. Let's start by defining what we want the user to type when they execute this command:
 
 <pre class="skript-code">command /test:</pre>
 
 We now have set up a command called /test. But what if we want the user to enter in more information? 
-Things like a player name or a number. That is where we use arguments. Arguments are a lot like 
-variables, but only have one value that changes each time a command is executed. They are completely 
-dependent on what the player types in. In order to add them to a command you enclose the type of 
-argument with &#60; and >
+
+Things like a player name or a number. That is where we use arguments. Arguments are a lot like variables, but only have one value that changes each time a command is executed. They are completely dependent on what the player types in. In order to add them to a command you enclose the type of argument with &#60; and >
 
 <pre class="skript-code">
 command /test &#60;player>:
@@ -20,25 +16,15 @@ command /test &#60;player>:
 command /test &#60;player> &#60;number> &#60;text>:
 </pre>
 
-You may also want to make an argument optional. That way the user doesn't have to type 
-it in if they don't want or need that argument for the command. For example, if you made 
-a command that teleported you to spawn 1, spawn 2, or spawn 3, and the user just wanted 
-to type in /spawn to get them to spawn 1. Rather than making them type /spawn 1 you can 
-just make it optional, and default to 1. Here's an example of what I'm talking about
+You may also want to make an argument optional. That way the user doesn't have to type it in if they don't want or need that argument for the command. For example, if you made a command that teleported you to spawn 1, spawn 2, or spawn 3, and the user just wanted to type in /spawn to get them to spawn 1. Rather than making them type /spawn 1 you can just make it optional, and default to 1. Here's an example of what I'm talking about
 
 <pre class="skript-code">command /spawn [&#60;number=1>]:</pre>
 
-The [ and ] around the argument make it optional (the user doesn't have to type it in) 
-and then we also give it a default value so that we know what to do if the user doesn't 
-type it in. Also know that if you use an optional text argument, that the default value 
-should be in "
+The [ and ] around the argument make it optional (the user doesn't have to type it in) and then we also give it a default value so that we know what to do if the user doesn't type it in. Also know that if you use an optional text argument, that the default value should be in quotes (")
 
 <pre class="skript-code">command /test [&#60;text="Example">]:</pre>
 
-This first line of defining a command ends with a : Because of that (and because it 
-acts as our event) all subsequent lines need to be indented. The next few lines are all 
-about the options that our command will have. Things like a description, permission, 
-and usage message.
+This first line of defining a command ends with a : Because of that (and because it acts as our event) all subsequent lines need to be indented. The next few lines are all about the options that our command will have. Things like a description, permission, and usage message.
 
 <pre class="skript-code">
 command /test:
@@ -52,12 +38,7 @@ command /test:
 		#Effects
 </pre>
 
-If you read the tutorial on indentation, then you will know that I mentioned that the only 
-exception to the indent after colon rule was commands. Well here it is. Each of these 
-options ends with a colon, but only the trigger gets an indent. The only one of these 
-options that is required is the trigger (it holds what the command actually does) The rest 
-aren't necessary, but can be useful in controlling aspects of the command. Now let's go one 
-by one, and get into more detail on each of these options
+If you read the tutorial on indentation, then you will know that I mentioned that the only exception to the indent after colon rule was commands. Well here it is. Each of these options ends with a colon, but only the trigger gets an indent. The only one of these options that is required is the trigger (it holds what the command actually does) The rest aren't necessary, but can be useful in controlling aspects of the command. Now let's go one by one, and get into more detail on each of these options
 
  * **Description:** What does this command do? What is it's purpose? It is mostly for in code documentation, but it's good to add anyway
 
@@ -89,11 +70,11 @@ command /help [&#60;number=1>]:
 
 ## <a href="#arguments">#</a> Arguments
 
-Now we know how to set up a command, and where to add the effects, but how do we use the arguments (the data that the player entered in) in the trigger? If there is only one type of an argument you can reference it by using "arg &#60;type>"
+Now we know how to set up a command, and where to add the effects, but how do we use the arguments (the data that the player entered in) in the trigger? If there is only one type of an argument you can reference it by using "arg &#60 type>"
 
-arg player
-arg number
-arg text
+ * arg player
+ * arg number
+ * arg text
 
 Alternatively you can use the number of the argument. This is determined by what order the arguments come in the command.
 
@@ -110,4 +91,3 @@ This command will display the arguments in order 1, 2, and then 3. The number, t
 \+ means that it is a valid type, but I have not tested to make sure that it works as a command argument. If anyone has tested some of these you can pm me and I'll update the list
 
 Post in the help forum with any questions, and on the tutorials forum if you have any improvements or suggestions for this tutorial
-</div>

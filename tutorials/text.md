@@ -1,24 +1,18 @@
 # Text in Scripts
 
-Skript allows you to write pieces of text (programmers usually call them strings)
-in the scripts. This is done by putting the text inside double quotes, as follows:
+Skript allows you to write pieces of text (programmers usually call them strings) in the scripts. This is done by putting the text inside double quotes, as follows:
 
 <pre>"this is text"</pre>
 
-Simple, isn't it? If an effect, expression, condition, trigger or function
-accepts something of type text or string, you can use this format to write it
-right there!
+Simple, isn't it? If an effect, expression, condition, trigger or function accepts something of type text or string, you can use this format to write it right there!
 
 ## <a href="#formatting_text">#</a> Formatting Text
 
-But isn't just text a bit boring? Worry not, as Minecraft has support for colors,
-styles and other formatting options in chat. Most of the options also work with
-item and entity names.
+But isn't just text a bit boring? Worry not, as Minecraft has support for colors, styles and other formatting options in chat. Most of the options also work with item and entity names.
 		
 ## <a href="#colors">#</a> Colors
 
-Minecraft has 16 pre-set color codes to be used in text. Skript supports them
-in two different ways:
+Minecraft has 16 pre-set color codes to be used in text. Skript supports them in two different ways:
 
 <ul class="is-list">
 	<li>Color name tags, for example &lt;red&gt;</li>
@@ -125,8 +119,7 @@ styles are not affected, and this feature can be toggled of in config.sk.
 
 ## <a href="#other_styles">#</a> Other Styles
 
-Minecraft also has various other styles available. The following are available
-everywhere, including item and entity names:
+Minecraft also has various other styles available. The following are available everywhere, including item and entity names:
 
 <table class="table is-bordered is-striped is-hoverable">
 	<tr>
