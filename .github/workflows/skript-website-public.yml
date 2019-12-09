@@ -1,0 +1,61 @@
+name: Build and deploy website
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Clone website
+      run: git clone https://github.com/Olyno/skript-website.git
+
+    - name: Checkout submodules
+      run: |
+        cd skript-website
+        git submodule init
+        git submodule update
+
+    - name: Setup NodeJS environement
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+
+    - uses: actions/cache@v1
+      id: cache-modules
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-yarn
+        restore-keys: |
+          ${{ runner.os }}-yarn
+
+    - name: Install dependencies
+      if: steps.cache-modules.outputs.cache-hit != 'true'
+      run: |
+        cd skript-website
+        yarn install
+
+    - name: Build Website
+      run: |
+        cd skript-website
+        yarn export
+    
+    - name: Deploy to GitHub Pages
+      run: |
+        cd skript-website/__sapper__/export/skript-website
+        git init
+        git config --global user.email "${EMAIL}"
+        git config --global user.name "Olyno"
+        git remote add origin https://${ACCESS_TOKEN}@github.com/Olyno/skript-website.git
+        git checkout -b gh-pages
+        git add .
+        git commit -m "Build website"
+        git push origin gh-pages -f
+      env:
+        EMAIL: ${{ secrets.EMAIL }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
