@@ -4,13 +4,13 @@
 			
 Custom commands can be some of the trickiest things to create. They can also be some of the most powerful. In this tutorial I am going to show everything about commands, and how to use them. Let's start by defining what we want the user to type when they execute this command:
 
-<pre class="skript-code">command /test:</pre>
+<pre>command /test:</pre>
 
 We now have set up a command called /test. But what if we want the user to enter in more information? 
 
 Things like a player name or a number. That is where we use arguments. Arguments are a lot like variables, but only have one value that changes each time a command is executed. They are completely dependent on what the player types in. In order to add them to a command you enclose the type of argument with &#60; and >
 
-<pre class="skript-code">
+<pre>
 command /test &#60;player>:
 # And for multiple arguments
 command /test &#60;player> &#60;number> &#60;text>:
@@ -18,15 +18,15 @@ command /test &#60;player> &#60;number> &#60;text>:
 
 You may also want to make an argument optional. That way the user doesn't have to type it in if they don't want or need that argument for the command. For example, if you made a command that teleported you to spawn 1, spawn 2, or spawn 3, and the user just wanted to type in /spawn to get them to spawn 1. Rather than making them type /spawn 1 you can just make it optional, and default to 1. Here's an example of what I'm talking about
 
-<pre class="skript-code">command /spawn [&#60;number=1>]:</pre>
+<pre>command /spawn [&#60;number=1>]:</pre>
 
 The [ and ] around the argument make it optional (the user doesn't have to type it in) and then we also give it a default value so that we know what to do if the user doesn't type it in. Also know that if you use an optional text argument, that the default value should be in quotes (")
 
-<pre class="skript-code">command /test [&#60;text="Example">]:</pre>
+<pre>command /test [&#60;text="Example">]:</pre>
 
 This first line of defining a command ends with a : Because of that (and because it acts as our event) all subsequent lines need to be indented. The next few lines are all about the options that our command will have. Things like a description, permission, and usage message.
 
-<pre class="skript-code">
+<pre>
 command /test:
 	description: Description of what the command does
 	usage: The message that comes up if the user types the command in wrong
@@ -56,7 +56,7 @@ If you read the tutorial on indentation, then you will know that I mentioned tha
 		
 Here is a completed example:
 
-<pre class="skript-code">
+<pre>
 command /help [&#60;number=1>]:
 	description: Shows the help menus
 	usage: /help [page]
@@ -78,7 +78,7 @@ Now we know how to set up a command, and where to add the effects, but how do we
 
 Alternatively you can use the number of the argument. This is determined by what order the arguments come in the command.
 
-<pre class="skript-code">
+<pre>
 command /test &#60;number> &#60;player> &#60;text>:
 	trigger:
        message "%arg 1%"

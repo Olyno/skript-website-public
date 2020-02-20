@@ -8,7 +8,7 @@ A loop is a bit of code that keeps repeating itself (aka looping) until a certai
 
 The condition isn't very obvious in most of the loops Skript provides.
 
-<pre class="skript-code">
+<pre>
 loop 10 times:
 	broadcast "Hi"
 </pre>
@@ -17,7 +17,7 @@ This code simply runs (or loops) 10 times. So where's the condition? There is an
 
 Loops simply repeat the code they are given. However, there can be slight differences each time. For example, the loop-number expression is a different number each iteration (an iteration is one time of running the loop code. The previous example would have 10 iterations). So what would happen if we broadcasted that number?
 
-<pre class="skript-code">
+<pre>
 loop 10 times:
 	broadcast "%loop-number%"
 </pre>
@@ -37,7 +37,7 @@ The output would be:
 As you can see, the loop did something slightly different in each of it's iterations. 
 Now let's have an example with players:
 
-<pre class="skript-code">
+<pre>
 loop all players:
 	if {var::%loop-player%} is true:
 		send "You are true!" to loop-player
@@ -56,7 +56,7 @@ List variables have the capability to hold many values. This means that you can 
 
 While loops look much closer to that diagram I posted above. While other kinds of loops go through a specified amount of objects before running out, a while loop could potentially run on forever. Just like other loops, this will keep iterating until the condition is false. Make sure to add a wait 1 tick into the code or else the server will crash from the constant while loop.
 
-<pre class="skript-code">
+<pre>
 while {var} is true:
 	strike lightning at player
 	chance of 10%:

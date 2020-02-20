@@ -4,7 +4,7 @@
 
 There are two important things to consider when constructing your function, that you should know when you make the first line. What are going to be the inputs of the function (the data it receives), and what the return (if any) of the function will be (the outputs). So let's make our first function.
 
-<pre class="skript-code">
+<pre>
 function myFunction(i: number) :: number:
 	set {_i} to {_i} + 1
 return {_i}
@@ -14,7 +14,7 @@ So let's break this down so you know what is happening. First, what does this fu
 
 This function will take a number and add 1 to it. Yes, you might not need a function to do this, but let's make it as simple as we can.
 
-<pre class="skript-code">
+<pre>
 # First you declare your function name, this can be anything. In this case 'myFunction'
 # You will then need to determine your inputs. I want this function to take in a single number
 # In the that, I also declare what will be the reference name of the variable, in this case 'i' which can be reference by {_i}
@@ -33,7 +33,7 @@ So, that is probably the most basic function you can do. However, a function is 
 
 Let's say we want a function that gives players a set of gear.
 
-<pre class="skript-code">
+<pre>
 function leathSet(p: player):
 	set helmet of {_p} to leather helmet
 	set chestplate of {_p} to leather chestplate
@@ -43,7 +43,7 @@ function leathSet(p: player):
 
 This would give the reference player a full set of leather armor. Modifying this makes it easier to give kits and such for instances like KitPVP. You could also make a neat little function that lets you dye a full set of armor with a simple function.
 
-<pre class="skript-code">
+<pre>
 function leatherDye(c: color , p: player):
 	#note the comma, this allows us to input multiple values
 	dye {_p}'s helmet {_c}
@@ -60,7 +60,7 @@ Lets see how we can call them.
 
 Shown is a demonstration of using the functions we have created in the same order as before.
 
-<pre class="skript-code">
+<pre>
 set {this.number} to 1
 #{this.number} will equal 1 here
 set {this.number} to myFunction({this.number})
@@ -69,7 +69,7 @@ set {this.number} to myFunction({this.number})
 
 The above will call our function that simply adds 1 to our inputted value.
 
-<pre class="skript-code">
+<pre>
 command /leatherset:
 	trigger:
 		leatherSet(player)
@@ -77,7 +77,7 @@ command /leatherset:
 
 The above will give the executing player a full set of leather armor.
 
-<pre class="skript-code">
+<pre>
 command /leatherset &#60;color>:
 	trigger:
 		leatherSet(player)

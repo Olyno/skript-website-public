@@ -1,21 +1,19 @@
 # skript-website-public
 
-The [Skript](https://github.com/Olyno/skript-website)'s website public side. It contains tutorials and more stuff.
+Welcome on the Public Stuff of [Skript's Website](https://github.com/Olyno/skript-website). You can find here all static resources that the website uses.
 
-# Contribute
+## Contribute
 
-## Edit documentation
+### Developers
 
-Replace ``docs.json`` file with the new one
+You can add a developer (contributor to Skript's Project) to the list. You just need to precise his name and his roles.
 
-## Add a contributor
+### Tutorials
 
- 1. Go in the ``developers.json`` file
- 2. Like others, add yours
+To contribute to a tutorial, you just have to respect these few rules:
+ - Your tutorial must be a ``.md`` file (markdown)
+ - Your tutorial must be in the ``tutorials`` directory when the pull request
+ - Your tutorial's name must be in lower case, and all spaces must be replaced with "_"
+ - All Skript code in the tutorial **must have a ``pre`` tag around**
 
-## Add a tutorial
-
- 1. Go in the ``tutorials.json`` file
- 2. Like others, add yours
- 3. Go in the ``tutorials`` directory
- 4. Like others, write your tutorial page
+If any of these few rules is not respected, the pull request will be closed.
